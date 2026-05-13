@@ -1,6 +1,9 @@
 name: ESPSomfy-RTS Release
 
-on: 
+permissions:
+  contents: write
+
+on:
   release:
     types: [published]
 
@@ -71,7 +74,8 @@ jobs:
           overwrite: true
 
   arduino:
-    permissions: write-all
+    permissions:
+      contents: write
     name: ${{ matrix.name }}
     needs: [littlefs]
     runs-on: ubuntu-latest
@@ -197,4 +201,4 @@ jobs:
           asset_path: ${{ matrix.obname }}.zip
           overwrite: true
           asset_content_type: application/zip
-          
+

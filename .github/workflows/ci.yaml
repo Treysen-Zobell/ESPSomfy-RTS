@@ -1,5 +1,8 @@
 name: ESPSomfy-RTS
 
+permissions:
+  contents: write
+
 on: [push, pull_request]
 
 env:
